@@ -1,4 +1,4 @@
-# AO3 Scraper & F1 Data Analysis 🏎️📊
+# AO3 Scraper - Moira's Version
 
 Este repositório é um fork do projeto original `radiolarian/AO3Scraper`, atualizado e otimizado para a coleta e análise estatística de fanfictions do Archive of Our Own (AO3), com foco inicial no fandom de **Formula 1 RPF**.
 
