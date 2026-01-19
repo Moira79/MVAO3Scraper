@@ -1,18 +1,38 @@
-# AO3 Scraper - Moira's Version
+# MVAO3Scraper - Coletor de Dados do AO3
 
-Este repositório é um fork do projeto original `radiolarian/AO3Scraper`, atualizado e otimizado para a coleta e análise estatística de fanfictions do Archive of Our Own (AO3).
+Este projeto é uma ferramenta de *web scraping* desenvolvida em Python para extrair metadados de fanfics do site **Archive of Our Own (AO3)**. 
 
-## 🚀 Melhorias Implementadas
+O foco é a **análise de dados** (Data Analytics), coletando informações estatísticas e categorizadas (Ships, Personagens, Ratings, Kudos, etc.) diretamente das páginas de listagem, otimizando o tempo de coleta e respeitando os limites do servidor.
 
-Diferente da versão original, esta versão inclui:
+## 🚀 Funcionalidades
 
-* **Bypass de Termos de Serviço (TOS):** Implementação de cookies automáticos para ignorar a barreira de aceitação de termos e avisos de conteúdo adulto do AO3.
-* **Extração Otimizada de Metadados:** Modificação do script de coleta para extrair apenas dados estatísticos (Kudos, Hits, Tags, etc.), ignorando o corpo do texto para acelerar o processo em até 10x.
-* **Resiliência de Conexão:** Uso de `requests.Session()` e lógica de re-tentativas para evitar erros de SSL (525) e bloqueios do Cloudflare.
+* **Coleta Otimizada:** Extrai todos os dados diretamente da lista de busca (não precisa entrar em cada história individualmente).
+* **Dados Estruturados:** Separa automaticamente Tags de Aviso, Ships, Personagens e Tags Extras em colunas distintas.
+* **Resiliência:** Sistema automático de retentativa para erros de conexão (525/502) e pausas inteligentes para limites de requisição (Erro 429).
+* **Saída em CSV:** Gera planilhas prontas para análise em Pandas, Excel ou Power BI.
 
-## 🛠️ Tecnologias Utilizadas
+## 📋 Pré-requisitos
 
-* **Python 3.12**
-* **Pandas:** Para manipulação e análise de dados.
-* **BeautifulSoup4:** Para web scraping e parsing de HTML.
-* **Requests:** Para comunicação com a API/Web do AO3.
+* Python 3.10+
+* Ambiente Linux (Recomendado) ou Windows
+
+## 🛠️ Instalação e Configuração
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/Moira79/MVAO3Scraper.git](https://github.com/Moira79/MVAO3Scraper.git)
+    cd MVAO3Scraper
+    ```
+
+2.  **Crie e ative o ambiente virtual (Linux):**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    pip install requests beautifulsoup4 lxml pandas unidecode
+    # Ou se tiver o arquivo requirements:
+    pip install -r requirements.txt
+    ```
